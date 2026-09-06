@@ -1,0 +1,26 @@
+Vivado Project Information
+==========================
+
+Tool:
+Vivado 2025.1
+
+Top-level RTL:
+axi4_lite_top
+
+Simulation top:
+tb_axi4_lite_top
+
+Target device:
+xc7a200tfbg676-2
+
+Clock:
+ACLK = 100 MHz
+Period = 10.000 ns
+
+Deployment:
+No FPGA board deployment was performed.
+
+Purpose:
+Vivado was used for RTL simulation, synthesis,
+implementation, timing analysis, CDC analysis,
+and timing constraint verification.

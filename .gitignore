@@ -1,0 +1,34 @@
+# Vivado generated files
+*.jou
+*.str
+*.pb
+*.wdb
+*.wcfg
+
+.Xil/
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+runs/
+gen/
+tmp/
+webtalk/
+webtalk.jou
+
+# Verilator
+obj_dir/
+*.o
+*.a
+*.so
+
+# Simulation executables
+axi4_yosys_sim
+
+# OS/editor
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db

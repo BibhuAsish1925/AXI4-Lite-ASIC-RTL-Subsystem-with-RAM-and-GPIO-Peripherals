@@ -1,0 +1,19 @@
+read_verilog -sv rtl/axi4_lite_pkg.sv
+read_verilog -sv rtl/axi4_lite_master.sv
+read_verilog -sv rtl/axi4_lite_addr_decoder.sv
+read_verilog -sv rtl/ram_slave.sv
+read_verilog -sv rtl/gpio_slave.sv
+read_verilog -sv rtl/axi4_lite_top.sv
+
+hierarchy -top axi4_lite_top
+
+proc
+opt
+memory
+opt
+techmap
+opt
+
+stat
+
+write_verilog -noattr netlist/axi4_lite_top_yosys.v
