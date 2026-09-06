@@ -1,33 +1,88 @@
+# ==============================================================
+# GitHub Linguist configuration
+# AXI4-Lite ASIC RTL Subsystem
+# ==============================================================
+
+
+# --------------------------------------------------------------
 # Hardware / RTL
+# --------------------------------------------------------------
+
+# SystemVerilog RTL and testbenches
 *.sv linguist-language=SystemVerilog
-*.v linguist-generated=true
-*.vh linguist-language=Verilog
 *.svh linguist-language=SystemVerilog
 
+# Verilog RTL / synthesized netlists
+*.v linguist-language=Verilog
+*.vh linguist-language=Verilog
+
+
+# --------------------------------------------------------------
+# FPGA / ASIC constraints
+# --------------------------------------------------------------
+
+# Vivado XDC is Tcl-based
+*.xdc linguist-language=Tcl
+
+
+# --------------------------------------------------------------
 # Automation / scripting
+# --------------------------------------------------------------
+
 *.py linguist-language=Python
+
 *.tcl linguist-language=Tcl
+*.xdc linguist-language=Tcl
+
 *.sh linguist-language=Shell
 *.bash linguist-language=Shell
+
 *.ps1 linguist-language=PowerShell
 *.bat linguist-language=Batchfile
 *.cmd linguist-language=Batchfile
 
+
+# --------------------------------------------------------------
 # Configuration
+# --------------------------------------------------------------
+
 *.yaml linguist-language=YAML
 *.yml linguist-language=YAML
 *.json linguist-language=JSON
 *.toml linguist-language=TOML
 *.ini linguist-language=INI
 
+
+# --------------------------------------------------------------
 # Documentation
+# --------------------------------------------------------------
+
 *.md linguist-language=Markdown
-*.rst linguist-language= reStructuredText
+*.rst linguist-language=ReStructuredText
 *.txt linguist-language=Text
 
+
+# --------------------------------------------------------------
 # Build / dependency files
+# --------------------------------------------------------------
+
 Makefile linguist-language=Makefile
 *.mk linguist-language=Makefile
 
-# Generated ASIC netlists
-*.nl.v linguist-generated=true
+
+# --------------------------------------------------------------
+# Vivado project
+# --------------------------------------------------------------
+
+*.xpr linguist-language=Tcl
+
+
+# --------------------------------------------------------------
+# Generated files
+# --------------------------------------------------------------
+
+# Keep the synthesized Verilog netlist visible in GitHub's
+# language statistics. Do NOT mark *.v as linguist-generated.
+#
+# If we later create other generated artifacts that should be
+# excluded from language statistics, they can be marked here.
