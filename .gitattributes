@@ -3,17 +3,18 @@
 # AXI4-Lite ASIC RTL Subsystem
 # ==============================================================
 
-
 # --------------------------------------------------------------
 # Hardware / RTL
 # --------------------------------------------------------------
 
-# SystemVerilog RTL and testbenches
+# Primary RTL and verification language
 *.sv linguist-language=SystemVerilog
 *.svh linguist-language=SystemVerilog
 
-# Verilog RTL / synthesized netlists
-*.v linguist-language=Verilog
+# Generated Verilog netlist
+# Exclude synthesized netlist from language statistics so that
+# SystemVerilog remains the dominant project language.
+*.v linguist-generated=true
 *.vh linguist-language=Verilog
 
 
@@ -21,7 +22,7 @@
 # FPGA / ASIC constraints
 # --------------------------------------------------------------
 
-# Vivado XDC is Tcl-based
+# Vivado XDC files use Tcl syntax
 *.xdc linguist-language=Tcl
 
 
@@ -32,7 +33,6 @@
 *.py linguist-language=Python
 
 *.tcl linguist-language=Tcl
-*.xdc linguist-language=Tcl
 
 *.sh linguist-language=Shell
 *.bash linguist-language=Shell
@@ -71,18 +71,7 @@ Makefile linguist-language=Makefile
 
 
 # --------------------------------------------------------------
-# Vivado project
+# Vivado project metadata
 # --------------------------------------------------------------
 
-*.xpr linguist-language=Tcl
-
-
-# --------------------------------------------------------------
-# Generated files
-# --------------------------------------------------------------
-
-# Keep the synthesized Verilog netlist visible in GitHub's
-# language statistics. Do NOT mark *.v as linguist-generated.
-#
-# If we later create other generated artifacts that should be
-# excluded from language statistics, they can be marked here.
+*.xpr linguist-generated=true
