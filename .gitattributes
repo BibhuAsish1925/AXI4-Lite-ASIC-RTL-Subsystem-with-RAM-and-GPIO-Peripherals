@@ -1,0 +1,33 @@
+# Hardware / RTL
+*.sv linguist-language=SystemVerilog
+*.v linguist-generated=true
+*.vh linguist-language=Verilog
+*.svh linguist-language=SystemVerilog
+
+# Automation / scripting
+*.py linguist-language=Python
+*.tcl linguist-language=Tcl
+*.sh linguist-language=Shell
+*.bash linguist-language=Shell
+*.ps1 linguist-language=PowerShell
+*.bat linguist-language=Batchfile
+*.cmd linguist-language=Batchfile
+
+# Configuration
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+*.json linguist-language=JSON
+*.toml linguist-language=TOML
+*.ini linguist-language=INI
+
+# Documentation
+*.md linguist-language=Markdown
+*.rst linguist-language= reStructuredText
+*.txt linguist-language=Text
+
+# Build / dependency files
+Makefile linguist-language=Makefile
+*.mk linguist-language=Makefile
+
+# Generated ASIC netlists
+*.nl.v linguist-generated=true
