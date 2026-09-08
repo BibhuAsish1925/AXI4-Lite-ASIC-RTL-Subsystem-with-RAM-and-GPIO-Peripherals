@@ -1,0 +1,29 @@
+# run 1000ns
+==============================================
+ GPIO Slave Testbench
+==============================================
+
+Test 1: Reset values
+Test 1 passed
+
+Test 2: GPIO_OUTPUT write/read
+Test 2 passed
+
+Test 3: GPIO_DIRECTION write/read
+Test 3 passed
+
+Test 4: GPIO_INPUT read
+Test 4 passed
+
+Test 5: GPIO_INPUT write protection
+Test 5 passed
+
+Test 6: GPIO_OUTPUT byte strobes
+Test 6 passed
+
+Test 7: Invalid register offset
+Test 7 passed
+
+[PASS] GPIO slave test completed successfully
+
+$finish called at time : 236 ns 

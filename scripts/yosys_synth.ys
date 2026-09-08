@@ -1,19 +1,26 @@
-read_verilog -sv rtl/axi4_lite_pkg.sv
-read_verilog -sv rtl/axi4_lite_master.sv
-read_verilog -sv rtl/axi4_lite_addr_decoder.sv
-read_verilog -sv rtl/ram_slave.sv
-read_verilog -sv rtl/gpio_slave.sv
-read_verilog -sv rtl/axi4_lite_top.sv
+# ==============================================================
+# AXI4-Lite ASIC RTL Subsystem
+# Yosys Synthesis Script
+# ==============================================================
+
+read_verilog -sv /work/rtl/axi4_lite_pkg.sv
+read_verilog -sv /work/rtl/axi4_lite_master.sv
+read_verilog -sv /work/rtl/axi4_lite_addr_decoder.sv
+read_verilog -sv /work/rtl/ram_slave.sv
+read_verilog -sv /work/rtl/gpio_slave.sv
+read_verilog -sv /work/rtl/axi4_lite_top.sv
 
 hierarchy -top axi4_lite_top
 
 proc
 opt
+
 memory
 opt
+
 techmap
 opt
 
 stat
 
-write_verilog -noattr netlist/axi4_lite_top_yosys.v
+write_verilog -noattr /work/results/yosys/axi4_lite_top_yosys.v

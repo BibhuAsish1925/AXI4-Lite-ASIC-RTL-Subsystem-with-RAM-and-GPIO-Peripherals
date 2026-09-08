@@ -1,0 +1,15 @@
+# run 1000ns
+==============================================
+ AXI4-Lite Master Testbench
+==============================================
+Write transaction accepted
+Write address handshake completed
+Write data handshake completed
+Write response received
+Read transaction accepted
+Read address handshake completed
+Read data received
+
+[PASS] AXI4-Lite master test completed successfully
+
+$finish called at time : 105 ns 

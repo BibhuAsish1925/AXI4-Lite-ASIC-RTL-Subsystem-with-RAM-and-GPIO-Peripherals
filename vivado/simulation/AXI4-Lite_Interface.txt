@@ -1,0 +1,9 @@
+# run 1000ns
+==============================================
+ AXI4-Lite Interface Testbench
+==============================================
+Reset released at time 20000
+
+[PASS] AXI4-Lite interface test completed successfully
+
+$finish called at time : 70 ns 

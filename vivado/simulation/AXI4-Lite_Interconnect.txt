@@ -1,0 +1,35 @@
+# run 1000ns
+==============================================
+ AXI4-Lite Interconnect Testbench
+==============================================
+
+Test 1: RAM write routing
+Test 1 passed
+
+Test 2: GPIO write routing
+Test 2 passed
+
+Test 3: Unmapped write
+Test 3 passed
+
+Test 4: RAM read routing
+Test 4 passed
+
+Test 5: GPIO read routing
+Test 5 passed
+
+Test 6: Unmapped read
+Test 6 passed
+
+Test 7: RAM boundary
+Test 7 passed
+
+Test 8: GPIO boundary
+Test 8 passed
+
+Test 9: Write strobe propagation
+Test 9 passed
+
+[PASS] AXI4-Lite interconnect test completed successfully
+
+$finish called at time : 38 ns 

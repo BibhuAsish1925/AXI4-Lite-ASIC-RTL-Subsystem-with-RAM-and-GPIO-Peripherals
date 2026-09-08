@@ -1,3 +1,4 @@
+# run 1000ns
 
 ==============================================
  AXI4-Lite TOP LEVEL TESTBENCH
@@ -47,4 +48,4 @@ READ PASS: addr=000003fc data=55aa1234 resp=00
 ==============================================
 [PASS] AXI4-Lite top-level test completed successfully
 ==============================================
-- /mnt/d/Downloads/GitHub/AXI4-Lite ASIC RTL Subsystem with RAM and GPIO Peripherals/tb/tb_axi4_lite_top_netlist.sv:492: Verilog $finish
+$finish called at time : 836 ns 
