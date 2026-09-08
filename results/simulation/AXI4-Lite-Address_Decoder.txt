@@ -1,0 +1,16 @@
+# run 1000ns
+==============================================
+ AXI4-Lite Address Decoder Testbench
+==============================================
+
+Testing RAM address range...
+Testing RAM boundary...
+
+Testing GPIO address range...
+Testing GPIO boundaries...
+
+Testing unmapped addresses...
+
+[PASS] AXI4-Lite address decoder test completed successfully
+
+$finish called at time : 11 ns

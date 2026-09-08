@@ -1,0 +1,17 @@
+# run 1000ns
+==============================================
+ AXI4-Lite Slave Testbench
+==============================================
+
+Test 1: AW before W
+Test 1 passed
+
+Test 2: W before AW
+Test 2 passed
+
+Test 3: Read transaction
+Test 3 passed
+
+[PASS] AXI4-Lite slave test completed successfully
+
+$finish called at time : 165 ns

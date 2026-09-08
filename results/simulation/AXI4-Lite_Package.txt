@@ -1,0 +1,8 @@
+# run 1000ns
+==============================================
+ AXI4-Lite Package Testbench
+==============================================
+
+[PASS] AXI4-Lite package test completed successfully
+
+$finish called at time : 0 fs 

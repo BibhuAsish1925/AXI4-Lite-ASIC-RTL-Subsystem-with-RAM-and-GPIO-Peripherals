@@ -1,3 +1,4 @@
+# run 1000ns
 ==============================================
  AXI4-Lite Master Testbench
 ==============================================
@@ -11,4 +12,4 @@ Read data received
 
 [PASS] AXI4-Lite master test completed successfully
 
-- /mnt/d/Downloads/GitHub/AXI4-Lite ASIC RTL Subsystem with RAM and GPIO Peripherals/tb/tb_axi4_lite_master.sv:344: Verilog $finish
+$finish called at time : 105 ns 

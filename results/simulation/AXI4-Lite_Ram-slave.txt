@@ -1,0 +1,20 @@
+# run 1000ns
+==============================================
+ RAM Slave Testbench
+==============================================
+
+Test 1: Full-word write/read
+Test 1 passed
+
+Test 2: Byte write strobes
+Test 2 passed
+
+Test 3: Multiple RAM addresses
+Test 3 passed
+
+Test 4: Last RAM word
+Test 4 passed
+
+[PASS] RAM slave test completed successfully
+
+$finish called at time : 236 ns 

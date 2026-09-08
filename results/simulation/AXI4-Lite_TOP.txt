@@ -1,0 +1,51 @@
+# run 1000ns
+
+==============================================
+ AXI4-Lite TOP LEVEL TESTBENCH
+==============================================
+
+Test 1: RAM write
+WRITE PASS: addr=00000000 data=deadbeef resp=00
+
+Test 2: RAM read
+READ PASS: addr=00000000 data=deadbeef resp=00
+
+Test 3: RAM byte strobes
+WRITE PASS: addr=00000004 data=11223344 resp=00
+WRITE PASS: addr=00000004 data=00bb00aa resp=00
+READ PASS: addr=00000004 data=11bb33aa resp=00
+
+Test 4: GPIO output
+WRITE PASS: addr=00001000 data=a5a55a5a resp=00
+READ PASS: addr=00001000 data=a5a55a5a resp=00
+
+Test 5: GPIO direction
+WRITE PASS: addr=00001008 data=ffff0000 resp=00
+READ PASS: addr=00001008 data=ffff0000 resp=00
+
+Test 6: GPIO input
+READ PASS: addr=00001004 data=12345678 resp=00
+
+Test 7: GPIO byte strobes
+WRITE PASS: addr=00001000 data=11223344 resp=00
+WRITE PASS: addr=00001000 data=00bb00aa resp=00
+READ PASS: addr=00001000 data=11bb33aa resp=00
+
+Test 8: Unmapped write
+WRITE PASS: addr=00002000 data=cafebabe resp=11
+
+Test 9: Unmapped read
+READ PASS: addr=00002000 data=00000000 resp=11
+
+Test 10: Invalid GPIO register
+WRITE PASS: addr=0000100c data=ffffffff resp=11
+READ PASS: addr=0000100c data=00000000 resp=11
+
+Test 11: RAM last word
+WRITE PASS: addr=000003fc data=55aa1234 resp=00
+READ PASS: addr=000003fc data=55aa1234 resp=00
+
+==============================================
+[PASS] AXI4-Lite top-level test completed successfully
+==============================================
+$finish called at time : 836 ns 
