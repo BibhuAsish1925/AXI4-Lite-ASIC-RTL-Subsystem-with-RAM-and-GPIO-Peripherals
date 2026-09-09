@@ -58,6 +58,18 @@
 - Verify valid and invalid memory accesses.
 - Verify the synthesized Yosys netlist using the same top-level testbench.
 
+| Tool | Purpose |
+|---|---|
+| SystemVerilog | RTL design |
+| Vivado 2025.1 | RTL simulation, synthesis, implementation, timing, power |
+| XSim | Functional simulation |
+| Verilator | RTL lint |
+| Yosys 0.62 | ASIC-oriented synthesis |
+| LibreLane 3.0.11 | ASIC synthesis environment |
+| Docker | Reproducible ASIC tool environment |
+| WSL2 / Ubuntu 24.04 | Development environment |
+| Git / GitHub | Version control and project hosting |
+
 ## Design Specifications
 
 | Parameter | Specification |
@@ -120,89 +132,17 @@
 
 ## RTL Modules
 
-### `axi4_lite_pkg.sv`
-
-- Defines common AXI4-Lite parameters and response codes.
-- Includes:
-  - Address width
-  - Data width
-  - Strobe width
-  - AXI response definitions
-
-### `axi4_lite_if.sv`
-
-- Defines the AXI4-Lite SystemVerilog interface.
-- Contains:
-  - Write address channel
-  - Write data channel
-  - Write response channel
-  - Read address channel
-  - Read data channel
-- Provides master and slave modports.
-
-### `axi4_lite_master.sv`
-
-- Implements AXI4-Lite master transaction control.
-- Handles:
-  - Write transactions
-  - Read transactions
-  - AXI handshakes
-  - Response reception
-
-### `axi4_lite_slave.sv`
-
-- Generic AXI4-Lite slave implementation.
-- Handles independent arrival ordering of:
-  - Write address
-  - Write data
-- Generates AXI responses.
-
-### `axi4_lite_addr_decoder.sv`
-
-- Decodes AXI addresses.
-- Generates peripheral selection signals.
-- Determines whether an address belongs to:
-  - RAM
-  - GPIO
-  - Unmapped region
-
-### `ram_slave.sv`
-
-- Implements a 1 KB RAM peripheral.
-- Organization:
-  - 256 words
-  - 32 bits per word
-- Supports:
-  - Read operations
-  - Write operations
-  - Byte write strobes
-  - Registered responses
-
-### `gpio_slave.sv`
-
-- Implements memory-mapped GPIO registers.
-- Supports:
-  - Output register
-  - Input register
-  - Direction register
-- Supports byte write strobes.
-- Invalid register accesses return `DECERR`.
-
-### `axi4_lite_interconnect.sv`
-
-- Provides a separately implemented AXI4-Lite interconnect structure.
-- Handles peripheral selection and response routing.
-- Verified independently.
-
-### `axi4_lite_top.sv`
-
-- Top-level subsystem.
-- Instantiates:
-  - AXI4-Lite master
-  - Address decoders
-  - RAM
-  - GPIO
-- Implements top-level transaction and response handling.
+| Module | Description | Key Features / Responsibilities |
+|---|---|---|
+| `axi4_lite_pkg.sv` | Defines common AXI4-Lite parameters and response codes. | - Address width<br>- Data width<br>- Strobe width<br>- AXI response definitions |
+| `axi4_lite_if.sv` | Defines the AXI4-Lite SystemVerilog interface. | - Write address channel<br>- Write data channel<br>- Write response channel<br>- Read address channel<br>- Read data channel<br>- Master and slave modports |
+| `axi4_lite_master.sv` | Implements AXI4-Lite master transaction control. | - Write transactions<br>- Read transactions<br>- AXI handshakes<br>- Response reception |
+| `axi4_lite_slave.sv` | Generic AXI4-Lite slave implementation. | - Independent arrival ordering of write address and write data<br>- AXI response generation |
+| `axi4_lite_addr_decoder.sv` | Decodes AXI addresses and generates peripheral selection signals. | Determines whether an address belongs to:<br>- RAM<br>- GPIO<br>- Unmapped region |
+| `ram_slave.sv` | Implements a 1 KB RAM peripheral. | **Organization:**<br>- 256 words<br>- 32 bits per word<br><br>**Supports:**<br>- Read operations<br>- Write operations<br>- Byte write strobes<br>- Registered responses |
+| `gpio_slave.sv` | Implements memory-mapped GPIO registers. | - Output register<br>- Input register<br>- Direction register<br>- Byte write strobes<br>- Invalid register accesses return `DECERR` |
+| `axi4_lite_interconnect.sv` | Provides a separately implemented AXI4-Lite interconnect structure. | - Peripheral selection<br>- Response routing<br>- Independent verification |
+| `axi4_lite_top.sv` | Top-level subsystem. | Instantiates:<br>- AXI4-Lite master<br>- Address decoders<br>- RAM<br>- GPIO<br><br>Implements top-level transaction and response handling. |
 
 ## Verification Strategy
 
@@ -422,85 +362,6 @@ This confirms that the synthesized RTL netlist preserves the expected functional
 
 ## Tools Used
 
-| Tool | Purpose |
-|---|---|
-| SystemVerilog | RTL design |
-| Vivado 2025.1 | RTL simulation, synthesis, implementation, timing, power |
-| XSim | Functional simulation |
-| Verilator | RTL lint |
-| Yosys 0.62 | ASIC-oriented synthesis |
-| LibreLane 3.0.11 | ASIC synthesis environment |
-| Docker | Reproducible ASIC tool environment |
-| WSL2 / Ubuntu 24.04 | Development environment |
-| Git / GitHub | Version control and project hosting |
-
-## Project Workflow
-
-```text
-Specification
-     ↓
-AXI4-Lite Interface Definition
-     ↓
-RTL Module Development
-     ↓
-Module-Level Verification
-     ↓
-Top-Level Integration
-     ↓
-Top-Level Functional Verification
-     ↓
-RTL Lint
-     ↓
-Vivado Synthesis
-     ↓
-Timing / Power / Utilization Analysis
-     ↓
-Yosys Synthesis
-     ↓
-Synthesized-Netlist Simulation
-     ↓
-Results Documentation
-```
-
-## Repository Structure
-
-rtl/
-├── axi4_lite_pkg.sv
-├── axi4_lite_if.sv
-├── axi4_lite_master.sv
-├── axi4_lite_slave.sv
-├── axi4_lite_addr_decoder.sv
-├── axi4_lite_interconnect.sv
-├── axi4_lite_top.sv
-├── ram_slave.sv
-└── gpio_slave.sv
-
-tb/
-├── tb_axi4_lite_master.sv
-├── tb_axi4_lite_slave.sv
-├── tb_axi4_lite_addr_decoder.sv
-├── tb_axi4_lite_interconnect.sv
-├── tb_ram_slave.sv
-├── tb_gpio_slave.sv
-├── tb_axi4_lite_top.sv
-└── tb_axi4_lite_top_netlist.sv
-
-constraints/
-└── axi4_lite_top.xdc
-
-docs/
-└── AXI4-Lite TOP block diagram.png
-
-netlist/
-└── axi4_lite_top_yosys.v
-
-results/
-├── implementation/
-├── synthesis/
-├── simulation/
-├── netlist_sim/
-└── yosys/
-
 ## Results at a Glance
 
 | Category | Result |
@@ -556,6 +417,34 @@ results/
 **[Insert power report here]**
 
 `results/implementation/power_rpt.png`
+
+## Project Workflow
+
+```text
+Specification
+     ↓
+AXI4-Lite Interface Definition
+     ↓
+RTL Module Development
+     ↓
+Module-Level Verification
+     ↓
+Top-Level Integration
+     ↓
+Top-Level Functional Verification
+     ↓
+RTL Lint
+     ↓
+Vivado Synthesis
+     ↓
+Timing / Power / Utilization Analysis
+     ↓
+Yosys Synthesis
+     ↓
+Synthesized-Netlist Simulation
+     ↓
+Results Documentation
+```
 
 ## Key Learning Outcomes
 
