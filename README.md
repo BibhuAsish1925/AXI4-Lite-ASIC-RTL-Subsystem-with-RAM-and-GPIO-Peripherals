@@ -343,31 +343,31 @@ This confirms that the synthesized RTL netlist preserves the expected functional
   <tr>
     <td align="center">
       <img width="994" height="1000" alt="1master" src="https://github.com/user-attachments/assets/6a90bdbf-a9eb-4c7a-a742-f0f23c6bf5a3" /><br/>
-      <small>AXI-4 lite Master</small>
+      <small>AXI4-Lite Master</small>
     </td>
     <td align="center">
       <img width="1029" height="1000" alt="1slave" src="https://github.com/user-attachments/assets/bdc10f60-b8a8-4c04-850c-5ad25684b608" /><br/>
-      <small>AXI-4 lite Slave</small>
+      <small>AXI4-Lite Slave</small>
     </td>
   </tr>
   <tr>
     <td align="center">
       <img width="2963" height="800" alt="addr decoder" src="https://github.com/user-attachments/assets/956a5cb8-66f5-4c56-82c4-2ecacdedf680" /><br/>
-      <small>AXI-4 lite Address decoder</small>
+      <small>AXI4-Lite Address decoder</small>
     </td>
     <td align="center">
       <img width="2118" height="800" alt="1ramslave" src="https://github.com/user-attachments/assets/f9534f0a-d6d6-490d-b24a-3b65bea61c29" /><br/>
-      <small>AXI-4 lite RAM slave</small>
+      <small>AXI4-Lite RAM slave</small>
     </td>
   </tr>
   <tr>
     <td align="center">
       <img width="1081" height="1000" alt="1gpio" src="https://github.com/user-attachments/assets/5be68104-b962-4d8e-9153-410d67c8e5e3" /><br/>
-      <small>AXI-4 lite Address decoder</small>
+      <small>AXI4-Lite Address decoder</small>
     </td>
     <td align="center">
       <img width="1396" height="1000" alt="if" src="https://github.com/user-attachments/assets/f12c9522-677e-492b-8a90-475fcc0cd376" /><br/>
-      <small>AXI-4 lite Interface</small>
+      <small>AXI4-Lite Interface</small>
     </td>
   </tr>
 </table>
@@ -375,39 +375,73 @@ This confirms that the synthesized RTL netlist preserves the expected functional
 <table align="center">
     <td align="center">
       <img width="1236" height="1600" alt="WhatsApp Image 2026-09-10 at 10 44 16" src="https://github.com/user-attachments/assets/3f99e1db-5ccf-4833-a518-48d0bb3358bd" /><br/>
-      <small>AXI-4 lite Top</small>
+      <small>AXI4-Lite Top</small>
     </td>
 </table>
 
+--- 
+
 ### Functional Simulation Waveform
 
-**[Insert AXI4-Lite top-level waveform here]**
+<table align="center">
+    <td align="center">
+      <img width="1547" height="657" alt="AXI4-Lite TOP waveform" src="https://github.com/user-attachments/assets/ac4b1b55-d833-4ca3-a927-b0e8a9153ea9" /><br/>
+      <small>AXI4-Lite top-level waveform</small>
+    </td>
+</table>
 
-`results/simulation/AXI4-Lite TOP waveform.png`
+---
 
-### Synthesis Utilization
+### Utilization Results
 
-**[Insert synthesis utilization report here]**
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="955" height="522" alt="utilization_rpt" src="https://github.com/user-attachments/assets/26677fa9-cea7-4b74-882f-ef08fb807d85" /><br/>
+      <small>synthesis utilization report</small>
+    </td>
+    <td align="center">
+      <img width="961" height="456" alt="utilization_rpt" src="https://github.com/user-attachments/assets/befa0a39-7b10-42df-a56e-0f0940e026da" /><br/>
+      <small>implementation utilization report</small>
+    </td>
+  </tr>
+</table>
 
-`results/synthesis/utilization_rpt.png`
-
-### Implementation Utilization
-
-**[Insert implementation utilization report here]**
-
-`results/implementation/utilization_rpt.png`
+---
 
 ### Timing Results
 
-**[Insert timing report here]**
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="1361" height="337" alt="timing_rpt" src="https://github.com/user-attachments/assets/a4d23d17-1df7-4cff-88af-f383c2719b06" /><br/>
+      <small>synthesis timing report</small>
+    </td>
+    <td align="center">
+      <img width="1362" height="357" alt="timing_rpt" src="https://github.com/user-attachments/assets/21f7434d-cf8a-4457-9ec3-f4d4d2fc7ad0" /><br/>
+      <small>implementation timing report</small>
+    </td>
+  </tr>
+</table>
 
-`results/implementation/timing_rpt.png`
+---
 
 ### Power Results
 
-**[Insert power report here]**
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="1130" height="517" alt="power_rpt" src="https://github.com/user-attachments/assets/10da4fb1-fce3-4498-bacb-cdd9c83f8f84" /><br/>
+      <small>synthesis power report</small>
+    </td>
+    <td align="center">
+      <img width="1071" height="477" alt="power_rpt" src="https://github.com/user-attachments/assets/a841ee11-6ac6-4981-a9ca-b8d7fa2145fe" /><br/>
+      <small>implementation power report</small>
+    </td>
+  </tr>
+</table>
 
-`results/implementation/power_rpt.png`
+---
 
 ## Project Workflow
 
@@ -471,6 +505,8 @@ Results Documentation
 
 ## Author
 
-**Bibhu Asish Panda**
+*Bibhu Asish Panda*  
+Electronics / VLSI / Digital Design Enthusiast
 
-**Project:** AXI4-Lite ASIC RTL Subsystem with RAM and GPIO Peripherals
+[GitHub](https://github.com/BibhuAsish1925) ·
+[LinkedIn](www.linkedin.com/in/bibhu-asish-panda-05332b288)
