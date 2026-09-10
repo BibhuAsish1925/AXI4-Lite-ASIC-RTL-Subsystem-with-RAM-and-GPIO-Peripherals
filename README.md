@@ -104,31 +104,12 @@
 
 ## RTL Architecture
 
-```text
-                 ┌───────────────────────┐
-                 │    AXI4-Lite Master   │
-                 │                       │
-                 │   Write / Read FSMs   │
-                 └───────────┬───────────┘
-                             │
-                             │ AXI4-Lite
-                             ▼
-                 ┌───────────────────────┐
-                 │    AXI4-Lite TOP      │
-                 │                       │
-                 │ Transaction Control   │
-                 │ Address Decoding      │
-                 │ Response Handling     │
-                 └───────────┬───────────┘
-                             │
-                    ┌────────┴────────┐
-                    │                 │
-                    ▼                 ▼
-              ┌───────────┐     ┌───────────┐
-              │ RAM Slave │     │ GPIO Slave│
-              │   1 KB    │     │ 32-bit I/O│
-              └───────────┘     └───────────┘
-```
+<table align="center">
+    <td align="center">
+      <img width="1692" height="930" alt="AXI4-Lite TOP block diagram" src="https://github.com/user-attachments/assets/af02a6e8-b094-4126-8704-5fb07c28bd1c" /><br/>
+      <small>Fig. RTL Architecture</small>
+    </td>
+</table>
 
 ## RTL Modules
 
