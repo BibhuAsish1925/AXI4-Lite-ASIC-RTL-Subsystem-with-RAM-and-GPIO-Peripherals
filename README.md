@@ -365,9 +365,28 @@ This confirms that the synthesized RTL netlist preserves the expected functional
 
 ### Top-Level Block Diagram
 
-**[Insert top-level architecture diagram here]**
-
-`docs/AXI4-Lite TOP block diagram.png`
+<table>
+  <tr>
+    <td align="center">
+      <img width="792" height="802" alt="image" src="https://github.com/user-attachments/assets/f814f81a-dec8-4fca-9181-a43d199a1cc6" /><br/>
+      <small>AXI-4 lite Master</small>
+    </td>
+    <td align="center">
+      <img width="893" height="856" alt="image" src="https://github.com/user-attachments/assets/956b4396-934b-456c-8994-040c4d855e23" /><br/>
+      <small>AXI-4 lite Slave</small>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img width="1697" height="643" alt="image" src="https://github.com/user-attachments/assets/e360f144-4db5-43b5-9eec-2dcc92256428" /><br/>
+      <small>AXI-4 lite RAM slave</small>
+    </td>
+    <td align="center">
+      <img width="865" height="796" alt="image" src="https://github.com/user-attachments/assets/9b1b12c4-e481-4e74-bd71-0391c146ada5" /><br/>
+      <small>AXI-4 lite GPIO slave</small>
+    </td>
+  </tr>
+</table>
 
 ### Functional Simulation Waveform
 
