@@ -136,17 +136,6 @@ Verification was performed at multiple levels:
 - Byte-strobe verification.
 - Synthesized-netlist simulation.
 
-### Dedicated Testbenches
-
-- `tb_axi4_lite_master.sv`
-- `tb_axi4_lite_slave.sv`
-- `tb_axi4_lite_addr_decoder.sv`
-- `tb_axi4_lite_interconnect.sv`
-- `tb_ram_slave.sv`
-- `tb_gpio_slave.sv`
-- `tb_axi4_lite_top.sv`
-- `tb_axi4_lite_top_netlist.sv`
-
 ## Top-Level Verification
 
 The top-level testbench verifies:
@@ -224,38 +213,24 @@ verilator --lint-only --Wall \
 
 **Tool:** Xilinx Vivado 2025.1
 
-**Target:**
-
-- `xc7a200tfbg676-2`
+**Target:**  `xc7a200tfbg676-2`
 
 **Clock:**
 
 - 100 MHz
 - 10 ns period
 
-### Post-Synthesis Results
+### Synthesis & Implementation Results
 
-| Metric | Result |
-|---|---:|
-| LUTs | 208 |
-| Flip-Flops | 288 |
-| BRAM | 0 |
-| DSP | 0 |
-| WNS | +5.415 ns |
-| TNS | 0 ns |
-| Failing Endpoints | 0 |
-
-### Post-Implementation Results
-
-| Metric | Result |
-|---|---:|
-| LUTs | 204 |
-| Flip-Flops | 354 |
-| BRAM | 0 |
-| DSP | 0 |
-| WNS | +4.366 ns |
-| TNS | 0 ns |
-| Failing Endpoints | 0 |
+| Metric | Post-Synthesis | Post-Implementation |
+|---|---:|---:|
+| LUTs | 208 | 204 |
+| Flip-Flops | 288 | 354 |
+| BRAM | 0 | 0 |
+| DSP | 0 | 0 |
+| WNS | +5.415 ns | +4.366 ns |
+| TNS | 0 ns | 0 ns |
+| Failing Endpoints | 0 | 0 |
 
 ### Timing Summary
 
@@ -329,6 +304,7 @@ Yosys Netlist
 
 > The RAM is synthesized into flip-flop/multiplexer logic because no ASIC memory macro/library is provided. Therefore, the Yosys cell count should not be interpreted as the area of an ASIC implementation with a compiled SRAM macro.
 
+
 ## Synthesized-Netlist Verification
 
 - The Yosys-generated netlist was re-elaborated successfully.
@@ -340,8 +316,6 @@ Yosys Netlist
 **All 11 top-level functional tests passed.**
 
 This confirms that the synthesized RTL netlist preserves the expected functional behavior of the original RTL design.
-
-## Tools Used
 
 ## Results at a Glance
 
@@ -400,7 +374,7 @@ This confirms that the synthesized RTL netlist preserves the expected functional
 
 <table align="center">
     <td align="center">
-      <img width="679" height="1500" alt="1top" src="https://github.com/user-attachments/assets/674c2bee-b575-47dd-b7ab-03f20254eeaf" /><br/>
+      <img width="1236" height="1600" alt="WhatsApp Image 2026-09-10 at 10 44 16" src="https://github.com/user-attachments/assets/3f99e1db-5ccf-4833-a518-48d0bb3358bd" /><br/>
       <small>AXI-4 lite Top</small>
     </td>
 </table>
